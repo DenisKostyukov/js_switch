@@ -39,22 +39,22 @@ const mainFunction=function(a,b,operationFunc){
   console.log(operationFunc);
   return result;
 }
-function calculator(operation) {
+function calculator(a,b,operation) {
   switch(operation){
     case "+":{
-      return mainFunction(firstNumber, secondNumber,sum);
+      return mainFunction(a, b,sum);
     }
     case "-":{
-      return mainFunction(firstNumber, secondNumber,sub);
+      return mainFunction(a, b,sub);
     }
     case "/":{
-      return mainFunction(firstNumber, secondNumber,div);
+      return mainFunction(a, b,div);
     }
     case "*":{
-      return mainFunction(firstNumber, secondNumber,mul);
+      return mainFunction(a, b,mul);
     }
     case "^":{
-      return mainFunction(firstNumber, secondNumber,exp);
+      return mainFunction(a, b,exp);
 
     }
     default:{
