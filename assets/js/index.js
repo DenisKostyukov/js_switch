@@ -19,37 +19,47 @@ switch (true) {
 const firstNumber = +prompt("Введите первое число");
 const secondNumber = +prompt("Введите второе число");
 const operation = prompt("Введите операцию: \n \" + \" - Сложение;\n \" - \" - Вычетание;\n \" / \" - Деление;\n \" * \" - Умножение;\n \" ^ \" - Возведение в степень;")
-/**
- * 
- * @param {number} a - first number
- * @param {number} b - second number
- * @param {string} operation - operation with numbers
- */
-function calculator(a, b, operation) {
+function sum(a,b){
+  return a+b;
+}
+function sub(a,b){
+  return a-b;
+}
+function mul(a,b){
+  return a*b;
+}
+function div(a,b){
+  return a/b;
+}
+function exp(a,b){
+  return a**b;
+}
+const mainFunction=function(a,b,operationFunc){
+  const result=operationFunc(a,b);
+  console.log(operationFunc);
+  return result;
+}
+function calculator(operation) {
   switch(operation){
     case "+":{
-      console.log(`${a}+${b}=`, a+b);
-      break;
+      return mainFunction(firstNumber, secondNumber,sum);
     }
     case "-":{
-      console.log(`${a}-${b}=`, a-b);
-      break;
+      return mainFunction(firstNumber, secondNumber,sub);
     }
     case "/":{
-      console.log(`${a}/${b}=`, a/b);
-      break;
+      return mainFunction(firstNumber, secondNumber,div);
     }
     case "*":{
-      console.log(`${a}*${b}=`, a*b);
-      break;
+      return mainFunction(firstNumber, secondNumber,mul);
     }
     case "^":{
-      console.log(`${a}^${b}=`, a**b);
-      break;
+      return mainFunction(firstNumber, secondNumber,exp);
+
     }
     default:{
-      console.log("Данной операции не существует")
+      return "Данной операции не существует";
     }
   }
 }
-calculator(firstNumber, secondNumber, operation);
+console.log(calculator(operation));
